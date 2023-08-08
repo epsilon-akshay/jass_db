@@ -1,6 +1,6 @@
 ## JASS DB - Just A Simple Storage 
 This is a strict learners project where the code will be clean, concise and self explanatory to learn how to build a simple database(not decided what kind)
-but for learers process, once this project is a success we will move onto giving this database the power of being distributed
+but for learners process, once this project is a success we will move onto giving this database the power of being distributed
 Lets ensure as an open source community i get support and motivation to complete this project.
 
 oh one more thing ill be doing it in my fav programming language GOLANG.
