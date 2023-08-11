@@ -22,6 +22,9 @@ Some awesome DB projects to take inspiration from:
 5. https://github.com/boltdb/bolt
 6. https://github.com/syndtr/goleveldb
 
+some other references read to make this database work:
+1. https://www.section.io/engineering-education/what-is-little-endian-and-big-endian/
+2. 
 ##Notes Rough work
 1. We can always build DB by writing into a file and accessing the file intelligently but the problem with the approach is that 
 Reading files the conventional way is not so good as concurrent reads sometimes wont read the complete file, concurrent writes will file, open and write will actually delete the older file and create a new file. so the better way to do this is (see file.go in rough work)
