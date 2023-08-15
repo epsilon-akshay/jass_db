@@ -4,6 +4,10 @@ but for learners process, once this project is a success we will move onto givin
 Lets ensure as an open source community i get support and motivation to complete this project.
 
 oh one more thing ill be doing it in my fav programming language GOLANG.
+We will try to build this with very less amount of external libray to actually understand the essence of building a database from scratch hence the
+external libraries used are:
+1. encoding/bigendian (cant write code now to convert bytes to uint16/32/64 do we)
+
 
 ## some of the primary resources
 1. Database internals book

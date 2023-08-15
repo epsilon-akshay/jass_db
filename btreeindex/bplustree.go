@@ -8,15 +8,14 @@ func NewBTree() btree {
 	return btree{}
 }
 
-func (bt btree) getNodeFromDiskPage(pointer uint64) bPlusTreeNode {
+func (bt btree) GetNodeFromDiskPage(pointer uint64) bPlusTreeNode {
 	return bPlusTreeNode{}
 }
 
-func (bt btree) newNode(node bPlusTreeNode) uint64 {
+func (bt btree) NewNode(node bPlusTreeNode) uint64 {
 	return 0
 }
 
-//test function
 func (bt btree) GetMaxKeyValueSize() int {
 	minKeyValue := PageSize - TypeOfNodeSize + NumberOfNodeElementsSize + KeyLengthSize + ValueLengthSize + MinPointerToNodeSize + OffsetMinSize
 	return minKeyValue
