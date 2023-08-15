@@ -51,3 +51,24 @@ func (node BPlusTreeNode) SetOffsetPos(idx uint16, offsetAdd uint16) {
 	pos := TypeOfNodeSize + NumberOfNodeElementsSize + node.NumberOfElem()*MinPointerToNodeSize + (idx-1)*2
 	binary.BigEndian.PutUint16(node.data[pos:pos+2], offsetAdd)
 }
+
+func (node BPlusTreeNode) GetKV(idx uint16) uint16 {
+	return TypeOfNodeSize + NumberOfNodeElementsSize + node.NumberOfElem()*MinPointerToNodeSize + 2*node.NumberOfElem() + node.OffsetPos(idx)
+}
+
+func (node BPlusTreeNode) Key(idx uint16) []byte {
+	offset := node.GetKV(idx)
+	lengOfKey := binary.BigEndian.Uint16(node.data[offset : offset+2])
+	return node.data[offset+4 : offset+4+lengOfKey]
+}
+
+func (node BPlusTreeNode) Value(idx uint16) []byte {
+	offset := node.GetKV(idx)
+	lengOfKey := binary.BigEndian.Uint16(node.data[offset : offset+2])
+	lengOfValue := binary.BigEndian.Uint16(node.data[offset+2 : offset+4])
+	return node.data[offset+4+lengOfKey : offset+4+lengOfKey+lengOfValue]
+}
+
+func (node BPlusTreeNode) Size() uint16 {
+	return node.GetKV(node.NumberOfElem())
+}

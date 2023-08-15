@@ -16,4 +16,6 @@ These are not in memory pointers these are 64 bit integers representing the offe
 check code in package bTree
 
 
+we make sure to try to fit the key value in a single page in disk
+
 
