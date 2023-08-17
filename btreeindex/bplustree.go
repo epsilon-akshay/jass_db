@@ -93,5 +93,4 @@ func CreateCopyOfLeafWithNewKVValue(oldNode BPlusTreeNode, newNode BPlusTreeNode
 	begin = newNode.GetKV(srcOld)
 	end = oldNode.GetKV(srcOld + remaining)
 	copy(newNode.data[newNode.GetKV(destNew):], oldNode.data[begin:end])
-
 }

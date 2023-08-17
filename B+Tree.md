@@ -18,4 +18,16 @@ check code in package bTree
 
 we make sure to try to fit the key value in a single page in disk
 
+##Insertion through mutation 
+1. go from root to each node until you find the required node
+2. check the size of node if greater than or equal to maxsize/2 +1 then split the node and add one element from the node to the upper node 
+3. do this recursively 
+
+##Insertion without mutation
+1. go from root to each node until you find the required node
+2. copy the node path
+2. copy the older node and create 2 new nodes from there
+3. go through node path and create the nodes again 
+4. now attach this node path to the root
+
 
